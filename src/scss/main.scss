@@ -1,3 +1,13 @@
+@import "reset.css";
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Open+Sans:300,400,600,700,800&display=swap&subset=latin-ext');
+@import "settings/_fonts";
+@import "settings/_colors";
+
+
+body{
+  font-family: $font-base;
+}
+
 button{
   color: red;
 }
