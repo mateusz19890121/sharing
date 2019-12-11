@@ -11,9 +11,10 @@ class HomeNav extends Component{
     render() {
         return(
             <>
-            <div>
+
+            <div className="home__login">
                 <nav>
-                    <ul>
+                    <ul className="home__login--ul">
                         <li>
                             <Link to="/logowanie">Zaloguj</Link>
                         </li>
@@ -23,14 +24,24 @@ class HomeNav extends Component{
                     </ul>
                 </nav>
             </div>
-            <div>
+            <div className="home__menu">
                 <nav>
-                    <ul>
-                        <li>Start</li>
-                        <li>O co chodzi</li>
-                        <li>O nas</li>
-                        <li>Fundacja i organizacje</li>
-                        <li>Kontakt</li>
+                    <ul className="home__menu--ul">
+                        <li>
+                            <Link to="start" smooth={true} duration={3000}>Start</Link>
+                        </li>
+                        <li>
+                            <Link to="theIdea" smooth={true} duration={3000}>O co chodzi</Link>
+                        </li>
+                        <li>
+                            <Link to="about" smooth={true} duration={3000}>O nas</Link>
+                        </li>
+                        <li>
+                            <Link to="foundations" smooth={true} duration={3000}>Fundacja i organizacje</Link>
+                        </li>
+                        <li>
+                            <Link to="contact" smooth={true} duration={3000}>Kontakt</Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

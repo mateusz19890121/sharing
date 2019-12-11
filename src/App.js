@@ -4,6 +4,7 @@ import './scss/main.scss';
 import ReactDOM from "react-dom";
 import Home from "./components/Home";
 import HomeNav from "./components/HomeNav";
+
 import {
     HashRouter,
     Route,
@@ -18,7 +19,7 @@ function App() {
         <HashRouter>
             <>
                 <Route exact path="/" component={Home} />
-                <Route path="/about" component={HomeNav} />
+                {/*<Route path="/about" component={HomeNav} />*/}
                 {/*<Route path="/about/us" component={AboutUs} />*/}
                 {/*<Route path="/about/company" component={AboutCompany} />*/}
 
