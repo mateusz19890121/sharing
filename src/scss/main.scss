@@ -3,20 +3,18 @@
 @import "settings/_fonts";
 @import "settings/_colors";
 
-
 body{
   font-family: $font-base;
+  color: $black;
 }
 a{
   text-decoration: none;
 }
-
 .home__container{
   display: flex;
 }
-
 .home__picture{
-  width: 46vw;
+  width: 42vw;
   height: 90vh;
   background-image: url("../assets/Home-Hero-Image.jpg");
   background-size: cover;
@@ -26,14 +24,20 @@ a{
 .home__right--container{
   display: flex;
   flex-direction: column;
-  width: 54vw;
+  width: 58vw;
   align-items: flex-end;
   margin-right: 8.875rem;
 }
 .home__login{
   a{
-    margin-left: 30px;
+    padding: 9px 10px 9px 10px;
     font-size: 0.875rem;
+  }
+  .login__li1, .login__li2{
+    border: solid 0.75px transparent;
+  }
+  .login__li1:hover, .login__li2:hover{
+    border: solid 0.75px $yellow__login;
   }
 }
 .home__login--ul{
@@ -41,15 +45,24 @@ a{
   line-height: 36px;
   margin-bottom: 17px;
   margin-top: 37px;
+  a{
+    color: $black;
+  }
 }
 .home__menu{
+  .home__menu--ul {
+    display: flex;
+    line-height: 42px;
 
-}
-.home__menu--ul{
-  display: flex;
-  line-height: 42px;
-  li{
-    margin-left: 55px;
+    li {
+      padding: 9px 20px 9px 20px;
+      font-size: 1.125rem;
+      border: solid 0.75px transparent;
+    }
+    li:hover{
+      border: solid 0.75px $black;
+      cursor: pointer;
+    }
   }
 }
 .home__article--container{
@@ -63,28 +76,167 @@ a{
     text-align: center;
     font-size: 2.375rem;
   }
+  span{
+    color: $black;
+  }
 }
 .home__article--box{
   display: flex;
   flex-direction: row;
   font-size: 2.25rem;
   text-align: center;
-  .home__article--box1{
-    margin-right: 44px;
+  .box{
+    width: 310px;
+    height: 120px;
+    border: 0.75px solid #3C3C3C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
   }
-}
-.box{
-  width: 310px;
-  height: 120px;
-  border: 0.75px solid #3C3C3C;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  a{
+    display: flex;
+  }
+  .box__space{
+    width: 44px;
+    height: 120px;
+  }
 }
 .home__article--image{
   background-image: url("../assets/Decoration.svg");
   width: 253px;
   height: 33px;
   margin: 25px auto 65px auto;
+}
+//-----------------------------------------SECTION THREE COLUMNS---------------------------------------------------
+.three__columns--container{
+  width: 100%;
+  height: 384px;
+  background-image: url("../assets/3 Columns Background@2x.png");
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  h1{
+    font-size: 5.625rem;
+    color: $brown;
+    line-height: 122px;
+  }
+  h2{
+    font-size: 1.125rem;
+    margin-top: 10px;
+    margin-bottom: 28px;
+  }
+  p{
+    font-size: 1rem;
+  }
+  .all__boxes{
+    width: 334px;
+  }
+}
+//-----------------------------------------SECTION THE IDEA---------------------------------------------------
+.idea__picture--container{
+  margin: 55px auto 0 auto;
+  text-align: center;
+  font-size: 2.375rem;
+}
+.idea__picture{
+  background-image: url("../assets/Decoration.svg");
+  width: 253px;
+  height: 33px;
+  margin: 25px auto 65px auto;
+}
+.idea__icons--container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 325px;
+  background-color: $grey__idea;
+  .icons{
+    width: 83px;
+    height: 83px;
+
+  }
+  .icon1{
+    background-image: url("../assets/Icon-1.svg");
+    margin-bottom: 8px;
+  }
+  .icon2{
+    background-image: url("../assets/Icon-2.svg");
+    margin-bottom: 10px;
+  }
+  .icon3{
+    background-image: url("../assets/Icon-3.svg");
+  }
+  .icon4{
+    background-image: url("../assets/Icon-4.svg");
+    margin-bottom: 7px;
+  }
+  .idea__boxes{
+    width: 130px;
+    height: 172px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .idea__box1{
+    width: 130px;
+    height: 172px;
+  }
+  .line{
+    width: 70px;
+    height: 1px;
+    background-color: $grey__border;
+    margin: 10.5px 0 10.5px 0;
+  }
+  .line1{
+    margin: 8.5px 0 8.5px 0;
+  }
+  h3{
+    font-size: 1.125rem;
+  }
+  p{
+    font-size: 1rem;
+  }
+}
+.idea__box5{
+  margin: 35px 0 80px 0;
+}
+//-----------------------------------------SECTION ABOUT---------------------------------------------------
+.about__container{
+  height: 90vh;
+  display: flex;
+  .about__box1{
+    width: 51.5%;
+    background-color: $grey__idea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .signature{
+      background-image: url("../assets/Signature.svg");
+      width: 148.84px;
+      height: 108.25px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      align-self: flex-end;
+      margin-right: 152px;
+      margin-top: 40px;
+    }
+    h1{
+      font-size: 2.375rem;
+    }
+    p{
+      font-size: 1.875rem;
+      width: 657px;
+    }
+  }
+  .about__box2{
+    background-image: url("../assets/People.jpg");
+    background-size: cover;
+    width: 48.5%;
+  }
+
 }

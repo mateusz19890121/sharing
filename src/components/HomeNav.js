@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
 import ReactDOM from "react-dom";
-import HomeHeader from './HomeHeader'
-import {Link} from "react-router-dom";
+import HomeHeader from './HomeThreeColumns'
+import {
+    HashRouter,
+    Route,
+    Link as Link1,
+    Switch,
+    NavLink
+} from 'react-router-dom';
+import * as Scroll from 'react-scroll';
+import { Link as Link2, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 
 
 
@@ -15,11 +23,11 @@ class HomeNav extends Component{
             <div className="home__login">
                 <nav>
                     <ul className="home__login--ul">
-                        <li>
-                            <Link to="/logowanie">Zaloguj</Link>
+                        <li className="login__li1">
+                            <Link1 to="/logowanie">Zaloguj</Link1>
                         </li>
-                        <li>
-                            <Link to="/rejestracja">Załóż Konto</Link>
+                        <li className="login__li2">
+                            <Link1 to="/rejestracja">Załóż Konto</Link1>
                         </li>
                     </ul>
                 </nav>
@@ -28,19 +36,19 @@ class HomeNav extends Component{
                 <nav>
                     <ul className="home__menu--ul">
                         <li>
-                            <Link to="start" smooth={true} duration={3000}>Start</Link>
+                            <Link2 to="start" smooth={true} duration={2500}>Start</Link2>
                         </li>
                         <li>
-                            <Link to="theIdea" smooth={true} duration={3000}>O co chodzi</Link>
+                            <Link2 to="theIdea" smooth={true} duration={2500}>O co chodzi?</Link2>
                         </li>
                         <li>
-                            <Link to="about" smooth={true} duration={3000}>O nas</Link>
+                            <Link2 to="about" smooth={true} duration={2500}>O nas</Link2>
                         </li>
                         <li>
-                            <Link to="foundations" smooth={true} duration={3000}>Fundacja i organizacje</Link>
+                            <Link2 to="foundations" smooth={true} duration={2500}>Fundacja i organizacje</Link2>
                         </li>
                         <li>
-                            <Link to="contact" smooth={true} duration={3000}>Kontakt</Link>
+                            <Link2 to="contact" smooth={true} duration={2500}>Kontakt</Link2>
                         </li>
                     </ul>
                 </nav>

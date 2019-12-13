@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import ReactDOM from "react-dom";
-import HomeHeader from './HomeHeader'
+import HomeHeader from './HomeThreeColumns'
 import HomeNav from "./HomeNav";
 import HomePicture from "./HomePicture";
 import HomeArticle from "./HomeArticle";
-
+import HomeThreeColumns from "./HomeThreeColumns";
+import HomeTheIdea from "./HomeTheIdea";
+import HomeAbout from "./HomeAbout";
 
 class Home extends Component{
 
@@ -13,12 +15,16 @@ class Home extends Component{
         return(
             <>
             <div className="home__container">
-            <HomePicture/>
+                <HomePicture/>
             <div className="home__right--container">
-            <HomeNav/>
-            <HomeArticle/>
+                <HomeNav/>
+                <HomeArticle/>
             </div>
+
             </div>
+                <HomeThreeColumns/>
+                <HomeTheIdea/>
+                <HomeAbout/>
             </>
         )
     }
