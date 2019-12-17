@@ -8,13 +8,13 @@ class HomeTheIdea extends Component{
     render() {
         return(
             <>
-           <div className="idea__picture--container">
+           <div className="idea__picture--container" id="theIdea">
                <h1>
                    Wystarczą 4 proste kroki
                </h1>
                <div className="idea__picture"></div>
            </div>
-            <div className="idea__icons--container" id="theIdea">
+            <div className="idea__icons--container">
                 <div className="idea_box1 idea__boxes">
                     <div className="icon1 icons"/>
                     <h3>Wybierz rzeczy</h3>

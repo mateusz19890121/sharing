@@ -238,5 +238,38 @@ a{
     background-size: cover;
     width: 48.5%;
   }
+}
+//-----------------------------------------SECTION FOUNDATIONS---------------------------------------------------
+.foundations__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  .foundations__box1{
+    width: 37vw;
+  }
+  .foundations__sections{
+    margin: 10px;
+  }
+  .foundations__choose--box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 
+  }
+}
+.pagination__box1{
+  width: 75vw;
+  display: flex;
+  justify-content: space-between;
+}
+.foundations__line{
+  width: 75vw;
+  height: 1px;
+  background-color: $grey__border;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

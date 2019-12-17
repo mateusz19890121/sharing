@@ -8,11 +8,11 @@ class HomeAbout extends Component{
     render() {
         return(
             <>
-               <div className="about__container">
+               <div className="about__container" id="about">
                    <div className="about__box1">
                        <h1>O nas</h1>
                        <div className="idea__picture"></div>
-                       <p id="about">Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery.
+                       <p>Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery.
                           Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.</p>
                        <div className="signature"></div>
                    </div>
