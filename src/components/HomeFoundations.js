@@ -66,22 +66,35 @@ class HomeFoundations extends React.Component{
         foundationsPerPage: 3,
         isToggleOn: true,
         isOrganisations: false,
-        localPage: 1
-
+        localPage: 1,
+        isLocal: false,
+        color: "black"
     };
 
     handleClick(){
-        this.setState(prevState => ({
-            isToggleOn: !prevState.isToggleOn
-        }))
+        this.setState({
+            isToggleOn: true,
+            isOrganisations: false,
+            isLocal: false,
+            currentPage: 1
+        })
     }
     handleClickOrganisations(){
-        this.setState(prevState => ({
+        this.setState({
             isToggleOn: false,
-            isOrganisations: !prevState.isOrganisations
-        }))
+            isOrganisations: true,
+            isLocal: false,
+            currentPage: 1
+        })
     }
-
+    handleClickLocal(){
+        this.setState({
+            isToggleOn: false,
+            isOrganisations: false,
+            isLocal: true,
+            currentPage: 1
+        })
+    }
     changePage(event, i) {
         this.setState({
             currentPage: i
@@ -122,15 +135,15 @@ class HomeFoundations extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div>
-                    <ul >
+                <div className="page__number--box">
+                    <ul className="page__number--ul">
                         { pageNumbers }
                     </ul>
                </div>
         </>
         )
     }
-    displayOrganistaions(organisationsToDisplay, targets2ToDisplay, stuffs2ToDisplay,  currentPage, pageNumbers2) {
+    displayOrganisations(organisationsToDisplay, targets2ToDisplay, stuffs2ToDisplay,  currentPage, pageNumbers2) {
         return (
             <>
                 <div className="foundations__pagination--box">
@@ -164,8 +177,8 @@ class HomeFoundations extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div>
-                    <ul >
+                <div className="page__number--box">
+                    <ul className="page__number--ul">
                         { pageNumbers2 }
                     </ul>
                 </div>
@@ -206,6 +219,10 @@ class HomeFoundations extends React.Component{
                         </div>
                     </div>
                 </div>
+                <div className="page__number--box">
+                    <ul className="page__number--ul">
+                    </ul>
+                </div>
             </>
         )
     }
@@ -234,16 +251,21 @@ class HomeFoundations extends React.Component{
         let stuffsToDisplay = stuffs.map((stuff, i) =>{
             return <p key={'s' + i}>{stuff}</p>
         });
-
+        let pageStyle = {
+            border: "1px solid black"
+        };
+        let pageStyle2 = {
+            border: "1px solid transparent"
+        };
         const pageNumbers = [];
         for(let i = 1; i <= Math.ceil(foundations.length/foundationsPerPage); i++){
-            const pageNumber = <li key={i}
+            const pageNumber = <li style={this.state.currentPage === i ? pageStyle : pageStyle2} className="page__number--li" key={i}
                                     onClick={event => this.changePage(event, i)}>{i}</li>;
             pageNumbers.push(pageNumber)
         }
         const pageNumbers2 = [];
         for(let i = 1; i <= Math.ceil(organisations.length/foundationsPerPage); i++){
-            const pageNumber2 = <li key={i}
+            const pageNumber2 = <li style={this.state.currentPage === i ? pageStyle : pageStyle2} className="page__number--li" key={i}
                                    onClick={event => this.changePage(event, i)}>{i}</li>;
             pageNumbers2.push(pageNumber2)
         }
@@ -271,207 +293,52 @@ class HomeFoundations extends React.Component{
             organisationsToDisplay = organisationsToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
             targets2ToDisplay = targets2ToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
             stuffs2ToDisplay = stuffs2ToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
-            organisationPageHtml = this.displayCurrentPage(organisationsToDisplay, targets2ToDisplay, stuffs2ToDisplay, 1, pageNumbers2);
+            organisationPageHtml = this.displayOrganisations(organisationsToDisplay, targets2ToDisplay, stuffs2ToDisplay, 1, pageNumbers2);
         } else if (currentPage === 2) {
             organisationsToDisplay = organisationsToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
             targets2ToDisplay = targets2ToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
             stuffs2ToDisplay = stuffs2ToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
-            organisationPageHtml = this.displayOrganistaions(organisationsToDisplay, targets2ToDisplay, stuffs2ToDisplay, 2, pageNumbers2);
+            organisationPageHtml = this.displayOrganisations(organisationsToDisplay, targets2ToDisplay, stuffs2ToDisplay, 2, pageNumbers2);
+        }  else if (currentPage === 3) {
+            organisationsToDisplay = organisationsToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
+            targets2ToDisplay = targets2ToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
+            stuffs2ToDisplay = stuffs2ToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
+            organisationPageHtml = this.displayOrganisations(organisationsToDisplay, targets2ToDisplay, stuffs2ToDisplay, 3, pageNumbers2);
         }
-        // let loaclPageHtml = null;
-        // if (localPage === 1) {
-        //     targets2ToDisplay = targets2ToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
-        //     stuffs2ToDisplay = stuffs2ToDisplay.slice(currentPage * 3 - 3, currentPage * 3);
-        //     localPageHtml = this.displayLocal(organisationsToDisplay, targets2ToDisplay, stuffs2ToDisplay, 1);
-        // }
+        let localPageHtml = null;
+        if (localPage === 1) {
+            targets2ToDisplay = targets2ToDisplay.slice(localPage * 3 - 3, currentPage * 3);
+            stuffs2ToDisplay = stuffs2ToDisplay.slice(localPage * 3 - 3, currentPage * 3);
+            localPageHtml = this.displayLocal(localToDisplay, targets2ToDisplay, stuffs2ToDisplay, 1);
+        }
+        const styles = {
+            border: "1px solid black"
+        };
+        const style = {
+            border: "1px solid transparent"
+        };
 
         return (
-            <div className="foundations__container">
+            <div className="foundations__container" id="foundations">
                 <div className="foundations__box1">
                     <h1>Komu pomagamy?</h1>
                     <div className="idea__picture"></div>
                     <div className="foundations__choose--box">
-                        <div className="foundations__section1 foundations__sections" onClick={this.handleClick.bind(this)}>Fundacjom</div>
-                        <div className="foundations__section2 foundations__sections" onClick={this.handleClickOrganisations.bind(this)}>Organizacjom pozarządowym</div>
-                        <div className="foundations__section3 foundations__sections">Lokalnym zbiórkom</div>
+                        <div className="foundations__section1 foundations__sections" style={this.state.isToggleOn ? styles : style} onClick={this.handleClick.bind(this)}>Fundacjom</div>
+                        <div className="foundations__section2 foundations__sections" style={this.state.isOrganisations ? styles : style} onClick={this.handleClickOrganisations.bind(this)}>Organizacjom<br/> pozarządowym</div>
+                        <div className="foundations__section3 foundations__sections" style={this.state.isLocal ? styles : style} onClick={this.handleClickLocal.bind(this)}>Lokalnym<br/> zbiórkom</div>
                     </div>
-                    <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz
-                        sprawdzić czym się zajmóją, komu pomagają i czego potrzebują.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                       et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                 </div>
-            <div className="content">
+            <div className="content__to--show">
                 {this.state.isToggleOn ? currentPageHtml : ""}
                 {this.state.isOrganisations ? organisationPageHtml : ""}
-
+                {this.state.isLocal ? localPageHtml : ""}
 
             </div>
             </div>
         )
-
-        // if(currentPage === 1) {
-        //     return (
-        //         <div className="foundations__container">
-        //             <div className="foundations__box1">
-        //                 <h1>Komu pomagamy?</h1>
-        //                 <div className="idea__picture"></div>
-        //                 <div className="foundations__choose--box">
-        //                     <div className="foundations__section1 foundations__sections">Fundacjom</div>
-        //                     <div className="foundations__section2 foundations__sections">Organizacjom pozarządowym</div>
-        //                     <div className="foundations__section3 foundations__sections">Lokalnym zbiórkom</div>
-        //                 </div>
-        //                 <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz
-        //                     sprawdzić czym się zajmóją, komu pomagają i czego potrzebują.</p>
-        //             </div>
-        //             <div className="foundations__pagination--box">
-        //                 <div className="pagination__box1">
-        //                     <div className="pagination_text1">
-        //                         {elements1[0]}
-        //                         {elements2[0]}
-        //                     </div>
-        //                     <div className="pagination_text2">
-        //                         {elements3[0]}
-        //                     </div>
-        //                 </div>
-        //                 <div className="foundations__line"></div>
-        //                 <div className="pagination__box1">
-        //                     <div className="pagination_text1">
-        //                         {elements1[1]}
-        //                         {elements2[1]}
-        //                     </div>
-        //                     <div className="pagination_text2">
-        //                         {elements3[1]}
-        //                     </div>
-        //                 </div>
-        //                 <div className="foundations__line"></div>
-        //                 <div className="pagination__box1">
-        //                     <div className="pagination_text1">
-        //                         {elements1[2]}
-        //                         {elements2[2]}
-        //                     </div>
-        //                     <div className="pagination_text2">
-        //                         {elements3[2]}
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <div>
-        //                 <ul>
-        //                     {pageNumbers}
-        //                 </ul>
-        //             </div>
-        //         </div>
-        //     )
-        // }
-        // else if(currentPage === 2){
-        //     return(
-        //         <div className="foundations__container">
-        //             <div className="foundations__box1">
-        //                 <h1>Komu pomagamy?</h1>
-        //                 <div className="idea__picture"></div>
-        //                 <div className="foundations__choose--box">
-        //                     <div className="foundations__section1 foundations__sections">Fundacjom</div>
-        //                     <div className="foundations__section2 foundations__sections">Organizacjom pozarządowym</div>
-        //                     <div className="foundations__section3 foundations__sections">Lokalnym zbiórkom</div>
-        //                 </div>
-        //                 <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz
-        //                     sprawdzić czym się zajmóją, komu pomagają i czego potrzebują.</p>
-        //             </div>
-        //             <div className="foundations__pagination--box">
-        //                 <div className="pagination__box1">
-        //                     <div className="pagination_text1">
-        //                         {elements1[3]}
-        //                         {elements2[3]}
-        //                     </div>
-        //                     <div className="pagination_text2">
-        //                         {elements3[3]}
-        //                     </div>
-        //                 </div>
-        //                 <div className="foundations__line"></div>
-        //                 <div className="pagination__box1">
-        //                     <div className="pagination_text1">
-        //                         {elements1[4]}
-        //                         {elements2[4]}
-        //                     </div>
-        //                     <div className="pagination_text2">
-        //                         {elements3[4]}
-        //                     </div>
-        //                 </div>
-        //                 <div className="foundations__line"></div>
-        //                 <div className="pagination__box1">
-        //                     <div className="pagination_text1">
-        //                         {elements1[5]}
-        //                         {elements2[5]}
-        //                     </div>
-        //                     <div className="pagination_text2">
-        //                         {elements3[5]}
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <div>
-        //                 <ul>
-        //                     {pageNumbers}
-        //                 </ul>
-        //                 {/*<div className="first" onClick={this.handleClick1}>1</div>*/}
-        //                 {/*<div className="second" onClick={this.handleClick2}>2</div>*/}
-        //                 {/*<div className="third" onClick={this.handleClick3}>3</div>*/}
-        //             </div>
-        //         </div>
-        //     )
-        // }
-        // else{
-        //     return(
-        //         <div className="foundations__container">
-        //             <div className="foundations__box1">
-        //                 <h1>Komu pomagamy?</h1>
-        //                 <div className="idea__picture"></div>
-        //                 <div className="foundations__choose--box">
-        //                     <div className="foundations__section1 foundations__sections">Fundacjom</div>
-        //                     <div className="foundations__section2 foundations__sections">Organizacjom pozarządowym</div>
-        //                     <div className="foundations__section3 foundations__sections">Lokalnym zbiórkom</div>
-        //                 </div>
-        //                 <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz
-        //                     sprawdzić czym się zajmóją, komu pomagają i czego potrzebują.</p>
-        //             </div>
-        //             <div className="foundations__pagination--box">
-        //                 <div className="pagination__box1">
-        //                     <div className="pagination_text1">
-        //                         {elements1[6]}
-        //                         {elements2[6]}
-        //                     </div>
-        //                     <div className="pagination_text2">
-        //                         {elements3[6]}
-        //                     </div>
-        //                 </div>
-        //                 <div className="foundations__line"></div>
-        //                 <div className="pagination__box1">
-        //                     <div className="pagination_text1">
-        //                         {elements1[7]}
-        //                         {elements2[7]}
-        //                     </div>
-        //                     <div className="pagination_text2">
-        //                         {elements3[7]}
-        //                     </div>
-        //                 </div>
-        //                 <div className="foundations__line"></div>
-        //                 <div className="pagination__box1">
-        //                     <div className="pagination_text1">
-        //                         {elements1[8]}
-        //                         {elements2[8]}
-        //                     </div>
-        //                     <div className="pagination_text2">
-        //                         {elements3[8]}
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //             <div>
-        //                 <ul>
-        //                     {pageNumbers}
-        //                 </ul>
-        //                 {/*<div className="first" onClick={this.handleClick1}>1</div>*/}
-        //                 {/*<div className="second" onClick={this.handleClick2}>2</div>*/}
-        //                 {/*<div className="third" onClick={this.handleClick3}>3</div>*/}
-        //             </div>
-        //         </div>
-        //     )
-        // }
     }
 }
 
