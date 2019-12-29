@@ -8,6 +8,7 @@ import HomeThreeColumns from "./HomeThreeColumns";
 import HomeTheIdea from "./HomeTheIdea";
 import HomeAbout from "./HomeAbout";
 import HomeFoundations from "./HomeFoundations";
+import Contact from "./Contact";
 
 class Home extends Component{
 
@@ -27,6 +28,7 @@ class Home extends Component{
                 <HomeTheIdea/>
                 <HomeAbout/>
                 <HomeFoundations/>
+                <Contact/>
             </div>
         )
     }

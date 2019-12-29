@@ -326,5 +326,33 @@ a{
     }
   }
 }
-
+//-----------------------------------------SECTION CONTACT---------------------------------------------------
+.contact__container{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.contact__container:after{
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/Background-Contact-Form.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 0.3;
+  z-index: -1;
+}
+.contact__form--container{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 142px;
+  top: 200px;
+  text-align: center;
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+}
 
