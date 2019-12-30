@@ -187,7 +187,7 @@ a{
   }
   .line{
     width: 70px;
-    height: 1px;
+    height: 3px;
     background-color: $grey__border;
     margin: 10.5px 0 10.5px 0;
   }
@@ -344,6 +344,14 @@ a{
   z-index: -1;
 }
 .contact__form--container{
+  h1{
+    font-size: 2.375rem;
+  }
+  div{
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: left;
+  }
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -355,4 +363,73 @@ a{
     flex-direction: column;
   }
 }
+.home__form{
+  input[type=text]{
+    border: none;
+    border-bottom: 1px solid $grey__border;
+    width: 256px;
+    margin-bottom: 40px;
+    margin-top: 12px;
+    line-height: 24px;
+  }
+  textarea{
+    border: none;
+    border-bottom: 1px solid $grey__border;
+    resize: none;
+    margin-top: 12px;
+  }
+  button{
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    border: 0.75px solid black;
+    margin-top: 44px;
+    align-self: flex-end;
+  }
+}
+.input__container{
+  display: flex;
+  text-align: left;
+}
+.input1{
+  margin-right: 16px;
+  width: 256px;
+}
+.footer__container{
+  position: absolute;
+  bottom: 0;
+  right: 142px;
+  display: flex;
+  width: 100%;
+  height: 24px;
+  justify-content: space-between;
+  .footer__left{
+    width: 205px;
+    height: 24px;
+  }
+  .footer__center{
+    width: 205px;
+    height: 24px;
+  }
+  .footer__right{
+    display: flex;
+    width: 205px;
+    height: 24px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .footer__icon1{
+      background-image: url("../assets/Facebook.svg");
+      width: 30px;
+      height: 30px;
+      margin-right: 20px;
+    }
+    .footer__icon2{
+      background-image: url("../assets/Instagram.svg");
+      width: 30px;
+      height: 30px;
+    }
+
+  }
+}
+
 
