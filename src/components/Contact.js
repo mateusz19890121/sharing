@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from "react-dom";
-import ContactForm from "./ContactForm";
+import ContactForm from "./ContactForm"
 import ContactFooter from "./ContactFooter";
-class Contact extends React.Component{
+class Contact extends Component{
 
     render() {
         return(

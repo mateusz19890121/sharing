@@ -368,9 +368,10 @@ a{
     border: none;
     border-bottom: 1px solid $grey__border;
     width: 256px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     margin-top: 12px;
     line-height: 24px;
+    margin-right: 16px;
   }
   textarea{
     border: none;
@@ -428,8 +429,41 @@ a{
       width: 30px;
       height: 30px;
     }
-
   }
 }
-
-
+.success {
+  align-self: center;
+  text-align: center;
+  color: green;
+  font-size: 1.8em;
+  line-height: 1.2em;
+  font-weight: bold;
+  width: 50%;
+  margin-top: -60px;
+  margin-bottom: 18px;
+}
+label {
+  margin-right: 16px;
+  p {
+    color: red;
+    font-size: .7em;
+    line-height: 2em;
+    margin-bottom: -22px;
+    margin-top: -16px;
+    opacity: .7;
+    font-weight: 700;
+  }
+}
+.message{
+  margin-top: 20px;
+}
+.alert{
+  color: red;
+  font-size: .7em;
+  line-height: 2em;
+  margin-bottom: -22px;
+  margin-top: 4px;
+  opacity: .7;
+  text-align: left;
+  font-weight: 700;
+}
