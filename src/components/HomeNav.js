@@ -22,9 +22,9 @@ class HomeNav extends Component{
 
             <div className="home__login">
                 <nav>
-                    <ul className="home__login--ul">
+                    <ul className="home__login--ul login__ul">
                         <li className="login__li1">
-                            <Link1 to="/logowanie">Zaloguj</Link1>
+                            <Link1 to={{pathname: '/logowanie'}}>Zaloguj</Link1>
                         </li>
                         <li className="login__li2">
                             <Link1 to="/rejestracja">Załóż Konto</Link1>
@@ -32,7 +32,7 @@ class HomeNav extends Component{
                     </ul>
                 </nav>
             </div>
-            <div className="home__menu">
+            <div className="home__menu login__menu">
                 <nav>
                     <ul className="home__menu--ul">
                         <li>

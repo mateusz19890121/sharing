@@ -12,6 +12,7 @@ import {
     Switch,
     NavLink
 } from 'react-router-dom';
+import LoginLayout from "./components/LoginLayout";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <HashRouter>
             <>
                 <Route exact path="/" component={Home} />
-                {/*<Route path="/about" component={HomeNav} />*/}
+                <Route path="/logowanie" component={LoginLayout} />
                 {/*<Route path="/about/us" component={AboutUs} />*/}
                 {/*<Route path="/about/company" component={AboutCompany} />*/}
 

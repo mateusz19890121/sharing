@@ -467,3 +467,63 @@ label {
   text-align: left;
   font-weight: 700;
 }
+//-------------------------------------------------LOGIN-LAYOUT----------------------------------------------------
+.login__ul{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 8.875rem;
+}
+.login__menu{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 8.875rem;
+}
+.login{
+  text-align: center;
+  label{
+    height: 67.25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  h1{
+    margin-top: 123px;
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  form {
+    width: 384.5px;
+    height: 235px;
+    background-color: $grey__idea;
+    margin: 60px auto 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .login__text{
+    text-align: left;
+    font-size: 1rem;
+  }
+  input{
+    border: none;
+    border-bottom: 1px solid $grey__border;
+    background-color: $grey__idea;
+  }
+}
+.login__label1{
+  margin-bottom: 31px
+}
+.login__buttons{
+  width: 510px;
+  margin: 0 auto;
+  display: flex;
+  nav{
+    width: 100%;
+  }
+  ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
