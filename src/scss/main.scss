@@ -491,7 +491,7 @@ label {
     font-size: 2.5rem;
     font-weight: 600;
   }
-  form {
+  .login__layout--form {
     width: 384.5px;
     height: 235px;
     background-color: $grey__idea;
@@ -509,6 +509,7 @@ label {
     border: none;
     border-bottom: 1px solid $grey__border;
     background-color: $grey__idea;
+    font-size: 1.3rem;
   }
 }
 .login__label1{
@@ -526,4 +527,21 @@ label {
     width: 100%;
     justify-content: space-between;
   }
+}
+//-------------------------------------------------REGISTER-LAYOUT----------------------------------------------------
+.register__layout--form{
+  width: 384.5px;
+  height: 328px;
+  background-color: $grey__idea;
+  margin: 60px auto 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  input{
+    font-size: 1.3rem;
+  }
+}
+.login__label3{
+  margin-top: 32px;
 }

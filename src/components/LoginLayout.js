@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import HomeNav from "./HomeNav";
-import {Link as Link2} from "react-scroll";
 
 class LoginLayout extends Component{
 
@@ -13,7 +12,7 @@ class LoginLayout extends Component{
             Zaloguj się
             </h1>
             <div className="idea__picture"></div>
-                <form >
+                <form className="login__layout--form">
                     <label className="login__label1">
                         <div className="login__text">Email</div>
                         <input type="text"/>
@@ -38,6 +37,5 @@ class LoginLayout extends Component{
             </div>
         )
     }
-
 }
 export default LoginLayout;
