@@ -113,7 +113,8 @@ class ContactForm extends Component {
                             name={"name"}
                             value={name}
                             onChange={this.handleChange}
-                            style={nameError ? {borderBottom: "1px solid rgba(255,0,0,.7)"} : null}/>
+                            style={nameError ? {borderBottom: "1px solid rgba(255,0,0,.7)"} : null}
+                            />
                             {nameError ? <p>{nameError}</p> : null}
                  </label>
                 </div>
