@@ -69,7 +69,7 @@ class RegisterLayout extends Component{
                 <HomeNav/>
                 <div className="idea__picture--container"/>
                 <h1>
-                    Zaloguj się
+                    Załóż konto
                 </h1>
                 <div className="idea__picture"></div>
                 <form className="register__layout--form" onSubmit={this.formSubmit}>

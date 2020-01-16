@@ -9,6 +9,7 @@ import HomeTheIdea from "./HomeTheIdea";
 import HomeAbout from "./HomeAbout";
 import HomeFoundations from "./HomeFoundations";
 import Contact from "./Contact";
+import FormStep1 from "./forms/FormStep1";
 
 class Home extends Component{
 
@@ -29,6 +30,7 @@ class Home extends Component{
                 <HomeAbout/>
                 <HomeFoundations/>
                 <Contact/>
+                <FormStep1/>
             </div>
         )
     }
