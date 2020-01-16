@@ -49,7 +49,7 @@ class LoginLayout extends Component{
     render() {
         const {email, emailError, password, passwordError} = this.state;
         return(
-            <div className="login" id="logowanie">
+            <div className="login">
             <HomeNav/>
             <div className="idea__picture--container"/>
             <h1>

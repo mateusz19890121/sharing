@@ -14,6 +14,7 @@ import {
 } from 'react-router-dom';
 import LoginLayout from "./components/LoginLayout";
 import RegisterLayout from "./components/RegisterLayout";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
                 <Route exact path="/" component={Home} />
                 <Route path="/logowanie" component={LoginLayout} />
                 <Route path="/rejestracja" component={RegisterLayout} />
-                {/*<Route path="/about/company" component={AboutCompany} />*/}
+                <Route path="/wylogowano" component={Logout} />
 
             </>
         </HashRouter>
